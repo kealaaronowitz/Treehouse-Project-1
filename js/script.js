@@ -15,17 +15,57 @@ project 1 - A Random Quote Generator
   Use console.log() to log your array of quotes to the console.
 ***/
 
-
-
+let quotes = [
+  {
+    quote: "It's hard to beat a person who never gives up.",
+    source: "Babe Ruth",
+    citation: "www.brightdrops.com"
+  },
+  {
+    quote: "The Mets have shown me more ways to lose than I even knew existed.",
+    source: "Casey Stengel",
+    citation: "www.brainyquote.com",
+    year: 1968
+  },
+  {
+    quote: "I can see how he (Sandy Koufax) won twenty-five games. What I don’t understand is how he lost five.",
+    source: "Yogi Berra",
+    citation: "www.ftw.usatoday.org"
+  },
+  {
+    quote: "Andre Dawson has a bruised knee and is listed as day-to-day (pause). Arent we all",
+    source: "Vin Scully",
+    citation: "On-Air Radio Broadcast",
+    year: 1991
+  },
+  {
+    quote: "Don't measure yourself by what you have accomplished, but by what you should have accomplished with your ability.",
+    source: "John Wooden",
+    citation: "www.bleacherreport.com",
+    year: 1976
+  },
+  {
+    quote: "People say you can't go out and eat with your players. I say why not.",
+    source: "Tommy Lasorda"
+  },
+  {
+    quote: "If Casey Stangel were alive today, he would be spinning in his grave",
+    source: "Ralph Kiner",
+    citation: "www.quotes.net",
+    year: 1976
+  }
+];
 
 /***
   Create the `getRandomQuote` function to:
    - Create a variable to store a random number 
-   - Cse the random number to `return` a random quote object from the `quotes` array.
+   - Use the random number to `return` a random quote object from the `quotes` array.
 ***/
 
-
-
+function getRandomQuote(){
+  var randomNumber = Math.floor(Math.random() * quotes.length);
+  return quotes[randomNumber];
+}
 
 /***
   Create the `printQuote` function to: 
