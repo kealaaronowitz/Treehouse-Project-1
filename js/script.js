@@ -10,6 +10,7 @@ Project tested in Chrome, Internet Explorer, and Firefox.
 ***/
 
 let quotes;
+let colors; 
 let randomNumber;
 let randomQuotes;
 let htmlString;
@@ -62,6 +63,13 @@ quotes = [
     type: "Humor"
   }
 ];
+  
+/***
+  Array of background colors.
+***/
+
+colors = ['#FF3267', '#FFB987', '#FF65FF', '#FFFF76', '#00B6E3', '#E6B223', '#3916E6', '#999326', '#99FF32', '#B65D4D',
+];
 
 /***
   Function `getRandomQuote` to store a random number and return a random quote object.
@@ -72,6 +80,15 @@ randomNumber = Math.floor(Math.random() * quotes.length);
   return quotes[randomNumber];
 }
 
+/***
+  Function `getRandomColor` to store a random number and return a random background color.
+***/
+
+function getRandomColor() {
+  randomColor = Math.floor(Math.random() * colors.length);
+  return colors[randomColor];
+}
+ 
 /***
   Function `printQuote` to build HTML string including `quote` and `source` properties. If statement checks for `citation`, `year`, and `type` properties before adding them to the HTML string.
 ***/
@@ -92,8 +109,8 @@ function printQuote(){
   }
   htmlString += '</p>';
   document.getElementById('quote-box').innerHTML = htmlString;
+  document.body.style.background = getRandomColor();
 }
-console.log();
 /***
   Event Listener is triggered when "Show another quote" button is clicked to call `printQuote` function.
 ***/
