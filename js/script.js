@@ -12,8 +12,10 @@ Project tested in Chrome, Internet Explorer, and Firefox.
 let quotes;
 let colors; 
 let randomNumber;
+let randomColor;
 let randomQuotes;
 let htmlString;
+let intervalID;
 
 /*** 
   Array of quote objects with `quote`and `source` properties. `Citation` and `year` properties added where applicable.
@@ -88,7 +90,7 @@ function getRandomColor() {
   randomColor = Math.floor(Math.random() * colors.length);
   return colors[randomColor];
 }
- 
+
 /***
   Function `printQuote` to build HTML string including `quote` and `source` properties. If statement checks for `citation`, `year`, and `type` properties before adding them to the HTML string.
 ***/
@@ -108,9 +110,16 @@ function printQuote(){
     htmlString += '<span class="type">' + ', ' + randomQuotes.type + '</span>';
   }
   htmlString += '</p>';
-  document.getElementById('quote-box').innerHTML = htmlString;
+  document.getElementById("quote-box").innerHTML = htmlString;
   document.body.style.background = getRandomColor();
 }
+
+/***
+  Timing method prints a new quote to the page every 10 seconds. 
+ */
+
+intervalID = setInterval(printQuote, 10000);
+
 /***
   Event Listener is triggered when "Show another quote" button is clicked to call `printQuote` function.
 ***/
