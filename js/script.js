@@ -70,7 +70,7 @@ quotes = [
   Array of background colors.
 ***/
 
-colors = ['#FF3267', '#FFB987', '#FF65FF', '#FFFF76', '#00B6E3', '#E6B223', '#3916E6', '#999326', '#99FF32', '#B65D4D',
+colors = ["#FF3267", "#FFB987", "#FF65FF", "#FFFF76", "#00B6E3", "#E6B223", "#3916E6", "#999326", "#99FF32", "#B65D4D",
 ];
 
 /***
